@@ -24,7 +24,7 @@ with DAG (
     gcs_bucket = Variable.get("gcs_bucket")
     bq_project = Variable.get("bq_project")
     bq_dataset = Variable.get("bq_dataset")
-    tables = Variable.get("tables")
+    tables = Variable.get("tables", deserialize_json=True)
     
     transformed_table = tables.get('transformed_table')
 
