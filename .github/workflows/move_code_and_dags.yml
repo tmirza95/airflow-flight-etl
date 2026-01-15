@@ -4,6 +4,8 @@ on:
     branches:
       - main
       - dev
+  workflow_dispatch:
+    
 
 jobs:
   upload_to_dev:
@@ -35,12 +37,12 @@ jobs:
       
       - name: Import variables in Airflow dev environment
         run: |
-          glcloud composer environments run airflow-dev --location=us-central1
-            variables --import /home/airflow/gcs/data/dev/variables.json
+          glcloud composer environments run airflow-dev --location=us-central1 \
+            variables import -- /home/airflow/gcs/data/dev/variables.json
       
       - name: Import DAGs to the dev Airflow environment
         run: |
-          gcloud composer environment storage dags import \  
+          gcloud composer environments storage dags import \
             --environment airflow-dev \
             --location us-central1 \
-            --source airflow_job/airflow_job.py
+            --source airflow-job/airflow_job.py
