@@ -1,6 +1,6 @@
 {
     "env": "dev",
-    "gcs_bucket": " airflow-project-flights",
+    "gcs_bucket": "airflow-project-flights",
     "bq_project": "graphite-willow-482416-h2",
     "bq_dataset": "flight_data_dev",
     "tables": {
