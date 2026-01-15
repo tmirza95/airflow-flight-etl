@@ -37,7 +37,7 @@ jobs:
         run: |
           gcloud composer environments run airflow-dev \
             --location us-central1 \
-            variables import /home/airflow/gcs/data/dev/variables.json
+            -- variables import /home/airflow/gcs/data/dev/variables.json
 
       - name: Import DAGs to the dev Airflow environment
         run: |
