@@ -39,4 +39,4 @@ jobs:
             
       - name: Import DAGs to the dev Airflow environment
         run: |
-          gcloud composer environments storage dags import --environment airflow-dev --location us-central1 --source airflow_job/airflow_job.py
+          gcloud composer environments storage dags import --environment airflow-dev --location us-central1 --source airflow-job/airflow_job.py
