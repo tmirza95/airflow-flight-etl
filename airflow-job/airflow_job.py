@@ -38,6 +38,7 @@ with DAG (
 
     file_sensor = GCSObjectExistenceSensor(
         task_id = 'wait_for_files',
+        bucket = gcs_bucket,
         google_cloud_conn_id = 'google_cloud_default',
         object = f'airflow-project-flights/source_{env}/flight_booking.csv',
         timeout = 300,
