@@ -34,8 +34,10 @@ jobs:
           gsutil cp variables/dev/variables.json gs://airflow-project-flights/data/dev/variables.json
 
       - name: Import Airflow Variables
-        run: gcloud composer environments run airflow-dev --location us-central1 -- variables import /home/airflow/gcs/data/dev/variables.json
-      
+        run: gcloud composer environments run airflow-dev \
+            --location us-central1 \
+            variables -- import /home/airflow/gcs/data/dev/variables.json
+            
       - name: Import DAGs to the dev Airflow environment
         run: |
           gcloud composer environments storage dags import --environment airflow-dev --location us-central1 --source airflow_job/airflow_job.py
