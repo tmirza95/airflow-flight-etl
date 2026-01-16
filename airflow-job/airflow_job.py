@@ -66,7 +66,7 @@ with DAG (
             }
         },
         "runtime_config": {
-            "version": 2.2,
+            "version": '2.2',
         }
     }
 
@@ -74,7 +74,7 @@ with DAG (
         task_id = 'run_spark_on_dataproc_serverless',
         batch_id = batch_id,
         batch = batch,
-        region = 'us-central1',
+        region = 'us-east1',
         project_id = 'graphite-willow-482416-h2',
         gcp_conn_id="google_cloud_default",
     )
